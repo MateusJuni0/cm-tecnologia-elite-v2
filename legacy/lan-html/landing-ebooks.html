@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, follow">
+<title>E-books Estratégicos | C&M Tecnologia</title>
+<meta name="description" content="E-books profissionais sobre marketing digital, automação, IA e crescimento de negócios. Conhecimento que transforma resultados.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ===== VARIABLES ===== */
+:root {
+  --primary: #7C4DFF;
+  --primary-soft: #9a7bff;
+  --primary-glow: rgba(124, 77, 255, 0.4);
+  --accent: #22c55e;
+  --accent-glow: rgba(34, 197, 94, 0.3);
+  --gold: #FFD700;
+  --bg-dark: #0a0a12;
+  --bg-card: rgba(20, 20, 35, 0.6);
+  --text: #f1f1f7;
+  --text-muted: #a1a1c2;
+  --glass: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --radius: 20px;
+  --radius-sm: 12px;
+}
+
+/* ===== RESET ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-image: 
+    linear-gradient(180deg, 
+      rgba(10, 10, 20, 0.75) 0%, 
+      rgba(15, 5, 30, 0.6) 30%,
+      rgba(10, 5, 25, 0.65) 70%,
+      rgba(10, 10, 20, 0.8) 100%),
+    url('/img/nebula-jwst-ultra.png') !important;
+  background-color: #0a0a14 !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Background via cosmic-backgrounds.css */
+
+/* ===== HEADER ===== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 16px 24px;
+  transition: all 0.3s ease;
+}
+
+header.scrolled {
+  background: rgba(10, 10, 18, 0.8);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.logo img {
+  width: 44px;
+  height: auto;
+  filter: drop-shadow(0 0 20px var(--primary-glow));
+  transition: transform 0.3s ease;
+}
+
+.logo:hover img {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.logo-text {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.logo-text span {
+  color: var(--primary);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--text);
+  background: var(--glass);
+}
+
+nav a.active {
+  color: var(--primary);
+  background: rgba(124, 77, 255, 0.1);
+}
+
+.header-cta {
+  background: linear-gradient(135deg, var(--primary), var(--primary-soft));
+  color: white;
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px var(--primary-glow);
+}
+
+.header-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px var(--primary-glow);
+}
+
+/* Mobile menu */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  nav { display: none; }
+  .header-cta { display: none; }
+  .menu-toggle { display: block; }
+}
+
+/* ===== HERO ===== */
+.hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 24px 80px;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 900px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+  backdrop-filter: blur(10px);
+}
+
+.hero-badge .dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.2); }
+}
+
+.hero h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  background: linear-gradient(135deg, var(--text) 0%, var(--primary-soft) 50%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  margin-top: 48px;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-value {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  display: block;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* ===== EBOOKS GRID ===== */
+.section {
+  padding: 80px 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-bottom: 16px;
+}
+
+.section-header p {
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ebooks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+/* ===== EBOOK CARD ===== */
+.ebook-card {
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  backdrop-filter: blur(10px);
+}
+
+.ebook-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--primary-glow), transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.ebook-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  border-color: var(--primary);
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.4),
+    0 0 40px var(--primary-glow);
+}
+
+.ebook-card:hover::before {
+  opacity: 1;
+}
+
+.ebook-cover {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+}
+
+.ebook-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.ebook-card:hover .ebook-cover img {
+  transform: scale(1.05);
+}
+
+.ebook-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: linear-gradient(135deg, var(--gold), #ffa500);
+  color: #000;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ebook-content {
+  padding: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.ebook-category {
+  font-size: 0.8rem;
+  color: var(--primary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.ebook-content h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.ebook-content p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.ebook-price {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.price-current {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.price-original {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
+.ebook-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  flex: 1;
+  padding: 14px 20px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-soft));
+  color: white;
+  box-shadow: 0 4px 20px var(--primary-glow);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px var(--primary-glow);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--glass-border);
+  color: var(--text);
+}
+
+.btn-outline:hover {
+  background: var(--glass);
+  border-color: var(--primary);
+}
+
+/* ===== FEATURES ===== */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 80px;
+}
+
+.feature-card {
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  padding: 32px;
+  text-align: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.feature-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-4px);
+}
+
+.feature-icon {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, var(--primary-glow), var(--accent-glow));
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 1.8rem;
+}
+
+.feature-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+
+.feature-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ===== CTA SECTION ===== */
+.cta-section {
+  background: linear-gradient(135deg, rgba(124, 77, 255, 0.15), rgba(34, 197, 94, 0.1));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  padding: 60px 40px;
+  text-align: center;
+  margin: 80px 24px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, var(--primary-glow), transparent 50%);
+  animation: rotateBg 15s linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes rotateBg {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.cta-section h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.cta-section p {
+  color: var(--text-muted);
+  margin-bottom: 32px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.cta-section .btn {
+  position: relative;
+  padding: 16px 40px;
+  font-size: 1rem;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: linear-gradient(180deg, transparent, rgba(124, 77, 255, 0.05));
+  border-top: 1px solid var(--glass-border);
+  padding: 60px 24px 30px;
+}
+
+.footer-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+.footer-brand p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-top: 16px;
+  max-width: 300px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.footer-social a {
+  width: 40px;
+  height: 40px;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.footer-social a:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+.footer-column h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--text);
+}
+
+.footer-column a {
+  display: block;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 6px 0;
+  transition: color 0.2s ease;
+}
+
+.footer-column a:hover {
+  color: var(--primary);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 30px;
+  border-top: 1px solid var(--glass-border);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .footer-brand p { max-width: 100%; }
+  .footer-social { justify-content: center; }
+  .footer-bottom { flex-direction: column; gap: 12px; }
+  .hero-stats { flex-direction: column; gap: 24px; }
+}
+
+/* ===== WHATSAPP BUTTON ===== */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  z-index: 99;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
+}
+
+.whatsapp-btn svg {
+  width: 32px;
+  height: 32px;
+  fill: white;
+}
+
+/* ===== SCROLL ANIMATIONS ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
+  <script src="/js/preloader.js"></script>
+  <link rel="stylesheet" href="/css/cosmic-backgrounds.css">
+  <link rel="stylesheet" href="/css/landing-common.css">
+</head>
+
+<body>
+
+<!-- Background Effects -->
+
+<!-- Header -->
+<header id="header">
+  <div class="header-inner">
+    <a href="/" class="logo">
+      <img src="/img/Logo3d.png" alt="C&M Tecnologia">
+      <span class="logo-text">C&M <span>Tecnologia</span></span>
+    </a>
+    
+    <nav>
+      <a href="/">Início</a>
+     <a href="/lan-html/Landing-cartao-visitas.html" class="nav-link">Cartões</a>
+  <a href="/lan-html/landing-apps.html" class="nav-link">Apps</a>
+  <a href="/lan-html/landing-ebooks.html" class="nav-link">E-books</a>
+  <a href="/lan-html/projetos.html" class="nav-link">Projetos</a>
+  
+    </nav>
+    
+    <a href="#ebooks" class="header-cta">Ver E-books</a>
+    
+    <button class="menu-toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-content reveal">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      Conhecimento que transforma resultados
+    </div>
+    
+    <h1>Biblioteca Digital de<br>Estratégias Comprovadas</h1>
+    
+    <p>E-books profissionais sobre marketing digital, automação, IA e crescimento de negócios. Conteúdo prático, direto ao ponto, sem enrolação.</p>
+    
+    <a href="#ebooks" class="btn btn-primary" style="display: inline-block; padding: 16px 40px;">
+      Explorar E-books →
+    </a>
+    
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-value">10+</span>
+        <span class="stat-label">E-books disponíveis</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">500+</span>
+        <span class="stat-label">Páginas de conteúdo</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">100%</span>
+        <span class="stat-label">Aplicável</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- E-books Grid -->
+<section class="section" id="ebooks">
+  <div class="section-header reveal">
+    <h2>E-books Estratégicos</h2>
+    <p>Selecione o conhecimento que vai acelerar o crescimento do o seu negócio</p>
+  </div>
+  
+  <div class="ebooks-grid">
+    
+    <!-- Ebook 1 -->
+    <article class="ebook-card reveal">
+      <div class="ebook-cover">
+        <img src="/img/ebooks/ebook-09.png" alt="Os 7 Erros Fatais dos Negócios Online" loading="lazy">
+        <span class="ebook-badge">Mais Vendido</span>
+      </div>
+      <div class="ebook-content">
+        <span class="ebook-category">Negócios</span>
+        <h3>Os 7 Erros Fatais dos Negócios Online</h3>
+        <p>Descubra os erros que destroem 90% das empresas digitais e como evitá-los.</p>
+        <div class="ebook-price">
+          <span class="price-current">€10,00</span>
+          <span class="price-original">€20,00</span>
+        </div>
+        <div class="ebook-actions">
+          <a href="/lan-html/checkout-ebook.html?id=1&title=Os%207%20Erros%20Fatais&price=10.00" class="btn btn-primary">Comprar</a>
+        </div>
+      </div>
+    </article>
+    
+    <!-- Ebook 2 -->
+    <article class="ebook-card reveal">
+      <div class="ebook-cover">
+        <img src="/img/ebooks/ebook-04.png" alt="Automação Secreta" loading="lazy">
+        <span class="ebook-badge">Novo</span>
+      </div>
+      <div class="ebook-content">
+        <span class="ebook-category">Automação</span>
+        <h3>Automação Secreta: Trabalhe 4h e Ganhe Mais</h3>
+        <p>O método para automatizar 80% do o seu trabalho e multiplicar resultados.</p>
+        <div class="ebook-price">
+          <span class="price-current">€10,00</span>
+          <span class="price-original">€20,00</span>
+        </div>
+        <div class="ebook-actions">
+          <a href="/lan-html/checkout-ebook.html?id=2&title=Automação%20Secreta&price=10.00" class="btn btn-primary">Comprar</a>
+        </div>
+      </div>
+    </article>
+    
+    <!-- Ebook 3 -->
+    <article class="ebook-card reveal">
+      <div class="ebook-cover">
+        <img src="/img/ebooks/ebook-06.png" alt="O Código do Marketing Digital" loading="lazy">
+      </div>
+      <div class="ebook-content">
+        <span class="ebook-category">Marketing</span>
+        <h3>O Código do Marketing Digital</h3>
+        <p>A fórmula que as agências não revelam para campanhas que convertem.</p>
+        <div class="ebook-price">
+          <span class="price-current">€10,00</span>
+          <span class="price-original">€20,00</span>
+        </div>
+        <div class="ebook-actions">
+          <a href="/lan-html/checkout-ebook.html?id=3&title=O%20Código%20do%20Marketing&price=10.00" class="btn btn-primary">Comprar</a>
+        </div>
+      </div>
+    </article>
+    
+    <!-- Ebook 4 -->
+    <article class="ebook-card reveal">
+      <div class="ebook-cover">
+        <img src="/img/ebooks/ebook-08.png" alt="IA Para Leigos" loading="lazy">
+        <span class="ebook-badge">Popular</span>
+      </div>
+      <div class="ebook-content">
+        <span class="ebook-category">Inteligência Artificial</span>
+        <h3>IA Para Leigos: Domine em 7 Dias</h3>
+        <p>Aprenda a usar ChatGPT, Claude e outras IAs para turbinar o seu negócio.</p>
+        <div class="ebook-price">
+          <span class="price-current">€10,00</span>
+          <span class="price-original">€20,00</span>
+        </div>
+        <div class="ebook-actions">
+          <a href="/lan-html/checkout-ebook.html?id=4&title=IA%20Para%20Leigos&price=10.00" class="btn btn-primary">Comprar</a>
+        </div>
+      </div>
+    </article>
+    
+    <!-- Ebook 5 -->
+    <article class="ebook-card reveal">
+      <div class="ebook-cover">
+        <img src="/img/ebooks/ebook-05.png" alt="De Zero a 10K Seguidores" loading="lazy">
+      </div>
+      <div class="ebook-content">
+        <span class="ebook-category">Redes Sociais</span>
+        <h3>De Zero a 10K Seguidores</h3>
+        <p>O método comprovado para crescer no Instagram, TikTok e LinkedIn.</p>
+        <div class="ebook-price">
+          <span class="price-current">€10,00</span>
+          <span class="price-original">€20,00</span>
+        </div>
+        <div class="ebook-actions">
+          <a href="/lan-html/checkout-ebook.html?id=5&title=De%20Zero%20a%2010K&price=10.00" class="btn btn-primary">Comprar</a>
+        </div>
+      </div>
+    </article>
+    
+    <!-- Ebook 6 -->
+    <article class="ebook-card reveal">
+      <div class="ebook-cover">
+        <img src="/img/ebooks/ebook-07.png" alt="SEO Descomplicado" loading="lazy">
+      </div>
+      <div class="ebook-content">
+        <span class="ebook-category">SEO</span>
+        <h3>SEO Descomplicado</h3>
+        <p>Apareça no topo do Google sem pagar por anúncios. Guia definitivo.</p>
+        <div class="ebook-price">
+          <span class="price-current">€10,00</span>
+          <span class="price-original">€20,00</span>
+        </div>
+        <div class="ebook-actions">
+          <a href="/lan-html/checkout-ebook.html?id=6&title=SEO%20Descomplicado&price=10.00" class="btn btn-primary">Comprar</a>
+        </div>
+      </div>
+    </article>
+    
+    <!-- Ebook 7 -->
+    <article class="ebook-card reveal">
+      <div class="ebook-cover">
+        <img src="/img/ebooks/ebook-03.png" alt="Websites Que Vendem" loading="lazy">
+      </div>
+      <div class="ebook-content">
+        <span class="ebook-category">Web Design</span>
+        <h3>Websites Que Vendem</h3>
+        <p>A psicologia por trás de sites que convertem visitantes em clientes.</p>
+        <div class="ebook-price">
+          <span class="price-current">€10,00</span>
+          <span class="price-original">€20,00</span>
+        </div>
+        <div class="ebook-actions">
+          <a href="/lan-html/checkout-ebook.html?id=7&title=Websites%20Que%20Vendem&price=10.00" class="btn btn-primary">Comprar</a>
+        </div>
+      </div>
+    </article>
+    
+    <!-- Ebook 8 -->
+    <article class="ebook-card reveal">
+      <div class="ebook-cover">
+        <img src="/img/ebooks/ebook-02.png" alt="O Futuro do Trabalho" loading="lazy">
+      </div>
+      <div class="ebook-content">
+        <span class="ebook-category">Carreira</span>
+        <h3>O Futuro do Trabalho</h3>
+        <p>Prepare-se para as mudanças que vão transformar o mercado até 2030.</p>
+        <div class="ebook-price">
+          <span class="price-current">€10,00</span>
+          <span class="price-original">€20,00</span>
+        </div>
+        <div class="ebook-actions">
+          <a href="/lan-html/checkout-ebook.html?id=8&title=O%20Futuro%20do%20Trabalho&price=10.00" class="btn btn-primary">Comprar</a>
+        </div>
+      </div>
+    </article>
+    
+    <!-- Ebook 9 -->
+    <article class="ebook-card reveal">
+      <div class="ebook-cover">
+        <img src="/img/ebooks/ebook-01.png" alt="Copywriting Magnético" loading="lazy">
+        <span class="ebook-badge">Premium</span>
+      </div>
+      <div class="ebook-content">
+        <span class="ebook-category">Copywriting</span>
+        <h3>Copywriting Magnético</h3>
+        <p>As palavras que vendem: técnicas de persuasão para textos irresistíveis.</p>
+        <div class="ebook-price">
+          <span class="price-current">€10,00</span>
+          <span class="price-original">€20,00</span>
+        </div>
+        <div class="ebook-actions">
+          <a href="/lan-html/checkout-ebook.html?id=9&title=Copywriting%20Magnético&price=10.00" class="btn btn-primary">Comprar</a>
+        </div>
+      </div>
+    </article>
+    
+    <!-- Ebook 10 -->
+    <article class="ebook-card reveal">
+      <div class="ebook-cover">
+        <img src="/img/ebooks/ebook-10.png" alt="Apps Que Faturam" loading="lazy">
+      </div>
+      <div class="ebook-content">
+        <span class="ebook-category">Desenvolvimento</span>
+        <h3>Apps Que Faturam</h3>
+        <p>Da ideia ao lançamento: como criar apps mobile de sucesso.</p>
+        <div class="ebook-price">
+          <span class="price-current">€10,00</span>
+          <span class="price-original">€20,00</span>
+        </div>
+        <div class="ebook-actions">
+          <a href="/lan-html/checkout-ebook.html?id=10&title=Apps%20Que%20Faturam&price=10.00" class="btn btn-primary">Comprar</a>
+        </div>
+      </div>
+    </article>
+    
+  </div>
+  
+  <!-- Features -->
+  <div class="features">
+    <div class="feature-card reveal">
+      <div class="feature-icon">📱</div>
+      <h3>Acesso Imediato</h3>
+      <p>Download instantâneo após a compra. Leia em qualquer dispositivo.</p>
+    </div>
+    
+    <div class="feature-card reveal">
+      <div class="feature-icon">🔄</div>
+      <h3>Atualizações Grátis</h3>
+      <p>Receba todas as atualizações futuras sem custo adicional.</p>
+    </div>
+    
+    <div class="feature-card reveal">
+      <div class="feature-icon">💬</div>
+      <h3>Suporte Direto</h3>
+      <p>Tire dúvidas diretamente com nossa equipe via WhatsApp.</p>
+    </div>
+    
+    <div class="feature-card reveal">
+      <div class="feature-icon">✅</div>
+      <h3>Garantia 7 Dias</h3>
+      <p>Não gostou? Devolvemos 100% do o seu dinheiro. Sem perguntas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section reveal">
+  <h2>Precisa de algo personalizado?</h2>
+  <p>Desenvolvemos soluções sob medida para o o seu negócio: websites, apps, automações e agentes de IA.</p>
+  <a href="https://wa.me/351964977047?text=Olá!%20Vi%20os%20e-books%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20da%20C%26M%20Tecnologia." class="btn btn-primary">Falar com um especialista →</a>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">
+          <img src="/img/Logo3d.png" alt="C&M Tecnologia" style="width: 50px;">
+          <span class="logo-text">C&M <span>Tecnologia</span></span>
+        </a>
+        <p>Soluções digitais completas em marketing, websites, aplicações e automação. Criamos tecnologia que gera resultados reais.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/" target="_blank" aria-label="Instagram">📸</a>
+          <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn">💼</a>
+          <a href="https://facebook.com/" target="_blank" aria-label="Facebook">👥</a>
+        </div>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Serviços</h4>
+        <a href="/lan-html/criacao-websites.index.html">Websites</a>
+        <a href="/lan-html/landing-apps.html">Apps Mobile</a>
+        <a href="/lan-html/marketing-digital.index.html">Marketing Digital</a>
+        <a href="/">Automação & IA</a>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Recursos</h4>
+        <a href="/lan-html/landing-ebooks.html">E-books</a>
+        <a href="/lan-html/Landing-cartao-visitas.html">Cartões Digitais</a>
+        <a href="/lan-html/projetos.html">Projetos</a>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Contacto</h4>
+        <a href="tel:+351964977047">+351 964 977 047</a>
+        <a href="mailto:contato@cmtecnologia.pt">contato@cmtecnologia.pt</a>
+        <a href="https://wa.me/351964977047">WhatsApp</a>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <span>© 2026 C&M Tecnologia · Todos os direitos reservados</span>
+      <span>Lisboa, Portugal 🇵🇹</span>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp Button -->
+<a href="https://wa.me/351964977047?text=Olá!%20Vi%20os%20e-books%20no%20site%20da%20C%26M%20Tecnologia." class="whatsapp-btn" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<script>
+// Header scroll effect
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// Scroll reveal animation
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, index) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, index * 100);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+
+    <!-- Premium Scripts -->
+    <script src="/js/scroll-animations.js"></script>
+    <script src="/js/back-to-top.js"></script>
+</body>
+</html>

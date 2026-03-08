@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, follow">
+
+
+    <title>Cartões de Visita - C&M Tecnologia</title>
+    
+    <style>
+        :root {
+            --color-purple: #7C4DFF;
+            --color-yellow: #FFD700;
+            --color-green: #4CAF50;
+            --color-dark-bg: #1a1a1a;
+            --color-dark-card: #2d2d2d;
+            --color-light-bg: #f5f5f5;
+            --color-light-card: #ffffff;
+            --color-text-dark: #ffffff;
+            --color-text-light: #1a1a1a;
+            --color-border: rgba(124, 77, 255, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: 
+              linear-gradient(180deg, 
+                rgba(10, 10, 20, 0.75) 0%, 
+                rgba(15, 5, 30, 0.6) 30%,
+                rgba(10, 5, 25, 0.65) 70%,
+                rgba(10, 10, 20, 0.8) 100%),
+              url('/img/nebula-jwst-ultra.png') !important;
+            background-color: #0a0a14 !important;
+            background-size: cover !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            background-attachment: fixed !important;
+            color: var(--color-text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Background via cosmic-backgrounds.css */
+
+        /* Header */
+        header {
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--color-border);
+    backdrop-filter: blur(10px);
+
+    background-size: cover;        /* OCUPA TUDO */
+    background-position: center;   /* CENTRALIZA */
+    background-repeat: no-repeat;  /* NÃO REPETE */
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.menu-toggle {
+  margin-left: auto;
+}
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--color-purple);
+            text-decoration: none;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--color-text-dark);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--color-yellow);
+        }
+
+        .theme-toggle {
+            background: var(--color-purple);
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            background: var(--color-green);
+        }
+
+        /* Menu Hamburger */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--color-yellow);
+            font-size: 28px;
+            cursor: pointer;
+            z-index: 101;
+        }
+
+        .menu-toggle.active {
+            color: var(--color-purple);
+        }
+
+        /* Container principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            margin-bottom: 80px;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--color-purple), var(--color-yellow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--color-yellow);
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-weight: 500;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: 2px solid var(--color-purple);
+            background: transparent;
+            color: var(--color-yellow);
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: var(--color-purple);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .btn.primary {
+            background: var(--color-purple);
+            color: white;
+            border-color: var(--color-purple);
+        }
+
+        .btn.primary:hover {
+            background: var(--color-green);
+            border-color: var(--color-green);
+        }
+
+        /* Grid de Cartões */
+        .cartoes-section {
+            margin-bottom: 80px;
+        }
+
+        .cartoes-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            text-align: center;
+            color: var(--color-yellow);
+        }
+
+        .cartoes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .cartao-wrapper {
+            perspective: 1000px;
+            cursor: pointer;
+            height: 320px;
+        }
+
+        .cartao-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .cartao-wrapper.flipped .cartao-container {
+            transform: rotateY(180deg);
+        }
+
+        .cartao-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            text-align: center;
+            border-radius: 12px;
+            border: 2px solid var(--color-border);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(124, 77, 255, 0.2);
+        }
+
+        .cartao-front {
+            background: linear-gradient(135deg, rgba(124, 77, 255, 0.3), rgba(76, 175, 80, 0.2));
+            color: white;
+            border: 2px solid var(--color-purple);
+        }
+
+        .cartao-front h3 {
+            color: var(--color-yellow);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .cartao-front p {
+            color: var(--color-green);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .cartao-front .click-hint {
+            color: var(--color-yellow);
+            font-size: 0.85rem;
+            margin-top: 20px;
+            opacity: 0.7;
+            font-style: italic;
+        }
+
+        .cartao-back {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(124, 77, 255, 0.2));
+            color: white;
+            transform: rotateY(180deg);
+            border: 2px solid var(--color-yellow);
+        }
+
+        .cartao-back h4 {
+            color: var(--color-yellow);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .cartao-back ul {
+            list-style: none;
+            text-align: left;
+            color: var(--color-green);
+            font-weight: 500;
+        }
+
+        .cartao-back li {
+            margin: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cartao-back li:before {
+            content: '✓';
+            color: var(--color-yellow);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 60px 0;
+            margin-top: 80px;
+        }
+
+        .timeline h2 {
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            text-align: center;
+            color: var(--color-yellow);
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--color-purple), var(--color-yellow), var(--color-green));
+        }
+
+        .timeline-item {
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            text-align: right;
+            padding-right: 52%;
+        }
+
+        .timeline-item:nth-child(even) {
+            text-align: left;
+            padding-left: 52%;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            width: 18px;
+            height: 18px;
+            background: var(--color-yellow);
+            border: 4px solid var(--color-dark-bg);
+            border-radius: 50%;
+            z-index: 10;
+            box-shadow: 0 0 0 3px var(--color-purple);
+        }
+
+        .timeline-content {
+            background: rgba(45, 45, 45, 0.8);
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 3px solid var(--color-purple);
+            border: 2px solid var(--color-border);
+            backdrop-filter: blur(10px);
+        }
+
+        .timeline-content h4 {
+            color: var(--color-yellow);
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+        }
+
+        .timeline-content p {
+            color: var(--color-green);
+            font-size: 0.95rem;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            position: relative;
+            width: 90%;
+            height: 90vh;
+            max-width: 1000px;
+            background: var(--color-dark-card);
+            border: 2px solid var(--color-purple);
+            border-radius: 12px;
+            overflow: hidden;
+            animation: slideUp 0.3s ease;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 25px;
+            background: linear-gradient(135deg, var(--color-purple), var(--color-green));
+            border-bottom: 2px solid var(--color-border);
+        }
+
+        .modal-header h2 {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .modal-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .modal-btn:hover {
+            background: white;
+            color: var(--color-purple);
+        }
+
+        .modal-body {
+            width: 100%;
+            height: calc(90vh - 70px);
+            overflow: hidden;
+            position: relative;
+            background: var(--color-light-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-cartao {
+            width: 85%;
+            max-width: 600px;
+            height: 70%;
+        }
+
+        #projeto-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: var(--color-light-bg);
+        }
+
+        .iframe-error {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 100, 100, 0.1);
+            border: 2px solid #ff6464;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            color: #ff6464;
+            z-index: 100;
+            width: 80%;
+            max-width: 400px;
+        }
+
+        .iframe-error h3 {
+            margin-bottom: 15px;
+            color: var(--color-yellow);
+        }
+
+        .iframe-error p {
+            margin-bottom: 20px;
+            color: var(--color-green);
+        }
+
+        .iframe-error button {
+            background: var(--color-purple);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .iframe-error button:hover {
+            background: var(--color-green);
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+
+            }
+            .logo span {
+                display: none;
+                }
+
+            .menu-toggle {
+                display: block;
+            }
+/* MOBILE: layout correto do header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-toggle {
+  margin-left: auto;
+}
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+      nav {
+    display: none !important; /* Esconde nav por padrão em mobile */
+    position: absolute !important;
+    top: 70px !important;
+    left: 0 !important;
+    right: 0 !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    background: rgba(26, 26, 26, 0.95) !important;
+    padding: 20px !important;
+    border-bottom: 2px solid var(--color-border) !important;
+    z-index: 99 !important;
+}
+
+            nav.active {
+    display: flex !important; /* Mostra quando active */
+}
+
+            nav a {
+                display: block;
+                padding: 10px;
+                color: var(--color-yellow);
+                font-weight: 600;
+            }
+
+
+      
+    
+
+
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .cartoes-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .cartao-wrapper {
+                height: 280px;
+            }
+
+            .modal-content {
+                width: 95%;
+                height: 95vh;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                padding: 0 0 30px 80px !important;
+                text-align: left !important;
+            }
+
+            .timeline-item:nth-child(even) {
+                padding-left: 80px !important;
+            }
+
+            .timeline-dot {
+                left: 12px;
+            }
+
+            .container {
+                padding: 40px 15px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        /* Animações */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Light Mode */
+        body.light-mode {
+            --color-dark-bg: #f5f5f5;
+            --color-dark-card: #ffffff;
+            --color-text-dark: #1a1a1a;
+        }
+
+        body.light-mode nav {
+            background: rgba(245, 245, 245, 0.95);
+        }
+
+        body.light-mode .modal-body {
+            background: #ffffff;
+        }
+
+        body.light-mode #projeto-iframe {
+            background: #ffffff;
+        }
+
+
+/* WhatsApp Floating Button - Landing */
+.whatsapp-float {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  z-index: 999;
+}
+
+.whatsapp-float img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Mobile ajuste */
+@media (max-width: 768px) {
+  .whatsapp-float {
+    right: 14px;
+    bottom: 14px;
+  }
+}
+
+
+/* ===== LANDING FOOTER ===== */
+.landing-footer {
+  background-image: url("/img/fundo2.jpeg");
+
+  background-size: cover;        /* ocupa todo o footer */
+  background-position: center;   /* centraliza */
+  background-repeat: no-repeat;  /* não repete */
+
+  color: #eaeaf0;
+  padding: 3rem 1.5rem 1.5rem;
+  position: relative;
+}
+
+.landing-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 0;
+}
+
+.footer-container,
+.footer-bottom {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .landing-footer {
+    padding: 2.5rem 1rem 1.5rem;
+    background-position: center top;
+  }
+}
+
+
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+/* Info */
+.footer-logo {
+  width: 140px;
+  margin-bottom: 1rem;
+}
+
+.footer-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #cfcfe6;
+}
+
+.footer-contact li {
+  list-style: none;
+  margin-bottom: 0.4rem;
+}
+
+.footer-social {
+  margin-top: 1rem;
+}
+
+.footer-social a {
+  margin-right: 1rem;
+  color: #7c4dff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Form */
+.footer-form h3 {
+  margin-bottom: 0.4rem;
+}
+
+.footer-form p {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  color: #cfcfe6;
+}
+
+.footer-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.footer-form input {
+  padding: 0.7rem;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+.btn-footer {
+  background: linear-gradient(135deg, #7c4dff, #ffd700);
+  color: #000;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Bottom */
+.footer-bottom {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-form {
+    margin-top: 1.5rem;
+  }
+}
+
+
+/* ===== FOOTER GRADIENT LAYER ===== */
+.landing-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    135deg,
+    #1a1233,
+    #3a2496,
+    #5f3bff
+  );
+
+  background-size: 300% 300%;
+  animation: footerGradient 22s ease infinite;
+
+  z-index: 0;
+}
+.landing-footer > * {
+  position: relative;
+  z-index: 1;
+}
+@keyframes footerGradient {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@media (max-width: 768px) {
+  .landing-footer::before {
+    animation-duration: 20s;
+  }
+}
+
+
+
+
+
+
+
+
+    </style>
+  <script src="/js/preloader.js"></script>
+  <link rel="stylesheet" href="/css/cosmic-backgrounds.css">
+  <link rel="stylesheet" href="/css/landing-common.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <a href="/" class="logo">
+            <img src="../img/Logo3d.png" alt="C&M Tecnologia">
+        
+            <span>C&M Tecnologia </span>
+        </a>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+         <nav class="nav">
+  <a href="/" class="nav-link">Início</a>
+  <a href="/lan-html/Landing-cartao-visitas.html" class="nav-link">Cartões</a>
+  <a href="/lan-html/landing-apps.html" class="nav-link">Apps</a>
+  <a href="/lan-html/landing-ebooks.html" class="nav-link">E-books</a>
+  <a href="/lan-html/projetos.html" class="nav-link">Projetos</a>
+  
+</nav>
+<div class="header-actions">
+      <button id="lang-toggle">🌐</button>
+    </div>
+     <div class="header-actions">
+        <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menu">
+            
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+    </header>
+
+    <!-- Container Principal -->
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Cartões de Visita Profissionais</h1>
+            <p>Designs exclusivos e impressos em alta qualidade. Cartões que deixam uma primeira impressão memorável!</p>
+            <div class="hero-buttons">
+                <button class="btn primary" onclick="document.querySelector('.cartoes-section').scrollIntoView({ behavior: 'smooth' })">Ver Designs</button>
+                <a href="/" class="btn">Solicitar Orçamento</a>
+            </div>
+        </section>
+
+        <!-- Seção de Cartões -->
+        <section class="cartoes-section">
+            <h2>Nossos Designs de Cartões</h2>
+            <div class="cartoes-grid" id="cartoes-grid">
+                <!-- Cartões carregados aqui via JavaScript -->
+            </div>
+        </section>
+
+        <!-- Timeline -->
+        <section class="timeline">
+            <h2>Processo de Criação</h2>
+            <div id="timeline-container">
+                <!-- Timeline carregada aqui via JavaScript -->
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Cartão de Visita</h2>
+                <div class="modal-buttons">
+                    <button class="modal-btn" onclick="abrirFullscreen()">🖥️ Tela Cheia</button>
+                    <button class="modal-btn" onclick="fecharModal()" title="Fechar">✕</button>
+                </div>
+            </div>
+            <div class="modal-body">
+                <iframe id="projeto-iframe" onload="onIframeLoad()" onerror="onIframeError()"></iframe>
+                <div class="iframe-error" id="iframe-error">
+                    <h3>⚠️ Projeto Bloqueado</h3>
+                    <p>Este cartão não pode ser visualizado em um iframe. Clique abaixo para abrir em tela cheia.</p>
+                    <button onclick="abrirFullscreen()">Abrir em Tela Cheia</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Footer Landing -->
+<footer class="landing-footer">
+  <div class="footer-container">
+
+    <!-- Coluna Info -->
+    <div class="footer-info">
+      <img src="/img/Logo3d.png" alt="C&M Tecnologia" class="footer-logo">
+
+      <p class="footer-text">
+        Soluções digitais completas em marketing, websites, aplicações e automação.
+        Criamos tecnologia que gera resultados reais.
+      </p>
+
+      <ul class="footer-contact">
+        <li>📞 +351 964 977 047</li>
+        <li>✉️ contato@cmtecnologia.pt</li>
+      </ul>
+
+      <div class="footer-social">
+        <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+        <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+        <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+      </div>
+    </div>
+
+    <!-- Coluna Form -->
+    <div class="footer-form">
+      <h3>Quer que entremos em contacto?</h3>
+      <p>Deixe o seu email e telefone.</p>
+
+      <form action="/api/enviar-email" method="POST">
+        <input
+          type="email"
+          name="email"
+          placeholder="Seu email"
+          required
+        >
+
+        <input
+          type="tel"
+          name="phone"
+          placeholder="Seu telefone"
+          required
+        >
+
+        <button type="submit" class="btn-footer">
+          Quero ser contactado
+        </button>
+      </form>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 C&M Tecnologia · Todos os direitos reservados
+  </div>
+</footer>
+
+
+
+
+<!-- WhatsApp Floating Button -->
+<a
+  href="https://wa.me/351964977047?text=Olá,%20vim%20pelo%20site%20da%20C%26M%20Tecnologia%20e%20gostaria%20de%20um%20orçamento."
+  class="whatsapp-float"
+  target="_blank"
+  rel="noopener"
+  aria-label="Falar no WhatsApp"
+>
+  <img src="/img/logo-whatsapp.jpeg" alt="WhatsApp">
+</a>
+
+
+
+
+
+    <script>
+        // Dados dos cartões
+        const cartoes = [
+            {
+                id: 1,
+                titulo: "Cartão Premium Roxo",
+                descricao: "Design elegante com gradiente roxo e dourado",
+                caracteristicas: [
+                    "Papel Premium 350g",
+                    "Impressão Full Color",
+                    "Acabamento Fosco",
+                    "Corte Perfeito"
+                ],
+                cliente: "Cliente A",
+                resultado: "Triplicou contatos recebidos"
+            },
+            {
+                id: 2,
+                titulo: "Cartão Minimalista",
+                descricao: "Design limpo e moderno com foco na tipografia",
+                caracteristicas: [
+                    "Papel Reciclado 300g",
+                    "Impressão em 2 Cores",
+                    "Relevo Seco",
+                    "Eco-Friendly"
+                ],
+                cliente: "Cliente B",
+                resultado: "Destaca no mercado sustentável"
+            },
+            {
+                id: 3,
+                titulo: "Cartão Corporativo",
+                descricao: "Profissional com identidade visual forte",
+                caracteristicas: [
+                    "Papel Supremo 280g",
+                    "Impressão CMYK",
+                    "Verniz Brilho Parcial",
+                    "Numeração"
+                ],
+                cliente: "Cliente C",
+                resultado: "Aumentou conversão em 180%"
+            },
+            {
+                id: 4,
+                titulo: "Cartão Criativo",
+                descricao: "Design inovador com toque de criatividade",
+                caracteristicas: [
+                    "Papel Colorido 320g",
+                    "Hot Stamping Ouro",
+                    "Corte Especial",
+                    "Acabamento Premium"
+                ],
+                cliente: "Cliente D",
+                resultado: "Memorável e profissional"
+            },
+            {
+                id: 5,
+                titulo: "Cartão Digital",
+                descricao: "Design responsivo para visualização em telas",
+                caracteristicas: [
+                    "Design Adaptável",
+                    "QR Code Integrado",
+                    "Links Interativos",
+                    "Análise de Cliques"
+                ],
+                cliente: "Cliente E",
+                resultado: "Rastreabilidade completa"
+            }
+        ];
+
+        // Timeline
+        const timelineItems = [
+            {
+                etapa: "01",
+                titulo: "Briefing e Conceito",
+                descricao: "Entendemos as suas necessidades, identidade visual e objetivo do cartão"
+            },
+            {
+                etapa: "02",
+                titulo: "Design e Mockup",
+                descricao: "Criamos designs exclusivos apresentando 3 opções diferentes"
+            },
+            {
+                etapa: "03",
+                titulo: "Revisões e Ajustes",
+                descricao: "Ajustamos cor, tipografia e layout conforme o seu feedback"
+            },
+            {
+                etapa: "04",
+                titulo: "Aprovação Final",
+                descricao: "Design finalizado em alta resolução pronto para impressão"
+            },
+            {
+                etapa: "05",
+                titulo: "Impressão e Entrega",
+                descricao: "Impressão profissional com acabamento e entrega garantida"
+            }
+        ];
+
+        let currentProjectUrl = '';
+
+        // Carregar cartões
+        function carregarCartoes() {
+            const grid = document.getElementById('cartoes-grid');
+            grid.innerHTML = '';
+
+            cartoes.forEach(cartao => {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'cartao-wrapper';
+                wrapper.onclick = () => flipCartao(wrapper);
+                
+                wrapper.innerHTML = `
+                    <div class="cartao-container">
+                        <div class="cartao-face cartao-front">
+                            <h3>${cartao.titulo}</h3>
+                            <p>${cartao.descricao}</p>
+                            <span class="click-hint">👆 Clique para ver detalhes</span>
+                        </div>
+                        <div class="cartao-face cartao-back">
+                            <h4>✓ Características</h4>
+                            <ul>
+                                ${cartao.caracteristicas.map(caract => `<li>${caract}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(wrapper);
+            });
+        }
+
+        // Flip do cartão
+        function flipCartao(element) {
+            element.classList.toggle('flipped');
+        }
+
+        // Carregar timeline
+        function carregarTimeline() {
+            const container = document.getElementById('timeline-container');
+            container.innerHTML = '';
+
+            timelineItems.forEach((item, index) => {
+                const timelineItem = document.createElement('div');
+                timelineItem.className = 'timeline-item';
+                timelineItem.innerHTML = `
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>Etapa ${item.etapa} - ${item.titulo}</h4>
+                        <p>${item.descricao}</p>
+                    </div>
+                `;
+                container.appendChild(timelineItem);
+            });
+        }
+
+        // Toggle Menu Mobile
+        function toggleMenu() {
+            const nav = document.querySelector('nav');
+            const toggle = document.querySelector('.menu-toggle');
+            nav.classList.toggle('active');
+            toggle.classList.toggle('active');
+        }
+
+        // Fechar menu ao clicar em link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('nav').classList.remove('active');
+                document.querySelector('.menu-toggle').classList.remove('active');
+            });
+        });
+
+        // Abrir modal
+        function abrirModal(titulo, url) {
+            currentProjectUrl = url;
+            document.getElementById('modal').classList.add('show');
+            document.getElementById('modal-title').textContent = titulo;
+            document.getElementById('projeto-iframe').src = url;
+            document.getElementById('iframe-error').style.display = 'none';
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Fechar modal
+        function fecharModal() {
+            document.getElementById('modal').classList.remove('show');
+            document.getElementById('projeto-iframe').src = '';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Abrir em tela cheia
+        function abrirFullscreen() {
+            window.open(currentProjectUrl, '_blank', 'width=1200,height=800');
+        }
+
+        // Eventos iframe
+        function onIframeLoad() {
+            console.log('iframe carregado com sucesso');
+            document.getElementById('iframe-error').style.display = 'none';
+        }
+
+        function onIframeError() {
+            console.log('Erro ao carregar iframe');
+            document.getElementById('iframe-error').style.display = 'flex';
+        }
+
+        // Toggle Dark/Light Mode
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+            const btn = document.querySelector('.theme-toggle');
+            if (document.body.classList.contains('light-mode')) {
+                btn.textContent = '☀️ Light';
+            } else {
+                btn.textContent = '🌙 Dark';
+            }
+            localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+        }
+
+        // Carregar tema salvo
+        function loadTheme() {
+            const theme = localStorage.getItem('theme') || 'dark';
+            if (theme === 'light') {
+                document.body.classList.add('light-mode');
+                document.querySelector('.theme-toggle').textContent = '☀️ Light';
+            }
+        }
+
+        // Fechar modal com ESC
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                fecharModal();
+            }
+        });
+
+        // Fechar modal ao clicar fora
+        document.addEventListener('click', function(event) {
+            const modal = document.getElementById('modal');
+            if (event.target === modal) {
+                fecharModal();
+            }
+        });
+
+        // Inicializar
+        loadTheme();
+        carregarCartoes();
+        carregarTimeline();
+    </script>
+   
+
+    <!-- Premium Scripts -->
+    <script src="/js/scroll-animations.js"></script>
+    <script src="/js/back-to-top.js"></script>
+</body>
+
+</html>

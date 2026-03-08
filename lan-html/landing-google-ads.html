@@ -1,0 +1,659 @@
+<!-- 
+LANDING PAGE 2: GOOGLE ADS MANAGEMENT
+Copiar este código e salvar como: landing-google-ads.html
+Tem a mesma estrutura da landing de web design, adaptada para Google Ads
+-->
+
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, follow">
+
+    <title>Gestão Google Ads Profissional | Website-Mark</title>
+    <meta name="description" content="Maximize seu ROI com Google Ads. Gestão profissional, otimização diária, relatórios transparentes.">
+    
+    <!-- Google Ads Tracking -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-XXXXXXXXXX');
+    </script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --primary: #1E3A8A; --secondary: #F97316; --text: #1F2937; --light: #6B7280; --bg: #F9FAFB; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: var(--text); background: white; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+        
+        header { background: white; padding: 20px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        header .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-weight: bold; font-size: 20px; color: var(--primary); }
+        .cta-header { background: var(--secondary); color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: 500; }
+        
+        .hero { background: linear-gradient(135deg, var(--primary) 0%, #1e40af 100%); color: white; padding: 60px 0; text-align: center; }
+        .hero h1 { font-size: 48px; margin-bottom: 20px; line-height: 1.2; }
+        .hero p { font-size: 20px; margin-bottom: 30px; opacity: 0.95; }
+        
+        .cta-button { display: inline-block; background: var(--secondary); color: white; padding: 15px 40px; border-radius: 5px; text-decoration: none; font-weight: 600; font-size: 18px; transition: background 0.3s; border: none; cursor: pointer; }
+        .cta-button:hover { background: #ea580c; }
+        
+        section { padding: 60px 0; }
+        section h2 { font-size: 36px; margin-bottom: 30px; color: var(--primary); }
+        section p { color: var(--light); margin-bottom: 15px; }
+        
+        .problems { background: var(--bg); }
+        .problem-item { background: white; padding: 20px; margin-bottom: 20px; border-left: 4px solid var(--secondary); border-radius: 5px; }
+        .problem-item h3 { color: var(--primary); margin-bottom: 10px; }
+        
+        .benefits { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .benefit-card { background: var(--bg); padding: 30px; border-radius: 8px; text-align: center; }
+        .benefit-card h3 { color: var(--primary); margin-bottom: 15px; }
+        .benefit-icon { font-size: 40px; margin-bottom: 15px; }
+        
+        .pricing { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+        .price-card { background: var(--bg); padding: 30px; border-radius: 8px; text-align: center; border: 2px solid transparent; transition: all 0.3s; }
+        .price-card.featured { border-color: var(--secondary); background: white; box-shadow: 0 10px 30px rgba(249, 115, 22, 0.2); }
+        .price-card h3 { color: var(--primary); margin-bottom: 15px; }
+        .price { font-size: 32px; font-weight: bold; color: var(--secondary); margin-bottom: 20px; }
+        
+        .price-card ul { list-style: none; text-align: left; margin-bottom: 25px; }
+        .price-card li { padding: 10px 0; border-bottom: 1px solid #e5e7eb; color: var(--light); }
+        .price-card li:before { content: "✓ "; color: var(--secondary); font-weight: bold; margin-right: 8px; }
+        
+        .form-section { background: var(--bg); padding: 60px 0; }
+        form { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        form h2 { text-align: center; margin-bottom: 30px; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-weight: 500; color: var(--text); }
+        input, textarea, select { width: 100%; padding: 12px; border: 1px solid #d1d5db; border-radius: 5px; font-size: 16px; font-family: inherit; }
+        input:focus, textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1); }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .form-submit { background: var(--secondary); color: white; padding: 15px 40px; border: none; border-radius: 5px; font-weight: 600; font-size: 16px; cursor: pointer; width: 100%; }
+        
+        footer { background: var(--primary); color: white; padding: 30px 0; text-align: center; }
+        
+        .stats { background: white; padding: 40px; border-radius: 8px; text-align: center; margin: 30px 0; }
+        .stat-item { display: inline-block; margin: 0 30px; }
+        .stat-number { font-size: 36px; font-weight: bold; color: var(--secondary); }
+        .stat-label { color: var(--light); font-size: 14px; }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 32px; }
+            .benefits, .pricing, .form-row { grid-template-columns: 1fr; }
+            section { padding: 40px 0; }
+        }
+    </style>
+  <script src="/js/preloader.js"></script>
+  <link rel="stylesheet" href="/css/cosmic-backgrounds.css">
+  <link rel="stylesheet" href="/css/landing-common.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Website-Mark</div>
+            <a href="#form" class="cta-header">Consulta Grátis</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Mais Clientes Via Google Ads</h1>
+            <p>Gestão profissional de campanhas + ROI garantido</p>
+            <a href="#form" class="cta-button">Solicitar Consulta</a>
+        </div>
+    </section>
+
+    <section class="problems">
+        <div class="container">
+            <h2>Os Problemas Com Google Ads</h2>
+            <p style="text-align: center; margin-bottom: 40px;">Muitas empresas gastam mal em publicidade online...</p>
+            
+            <div class="problem-item">
+                <h3>❌ Campaigns desotimizadas</h3>
+                <p>Você configura uma campanha e deixa rodando. Google não otimiza sozinho.</p>
+            </div>
+
+            <div class="problem-item">
+                <h3>❌ Orçamento sendo desperdiçado</h3>
+                <p>€500/mês em cliques que não convertem. ROI negativo.</p>
+            </div>
+
+            <div class="problem-item">
+                <h3>❌ Sem estratégia clara</h3>
+                <p>Não sabe quais keywords funcionam, qual é o CPA ideal, como otimizar.</p>
+            </div>
+
+            <div class="problem-item">
+                <h3>❌ Sem acompanhamento</h3>
+                <p>Ninguém monitorando seus anúncios diariamente. Você só vê fatura.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>Como Website-Mark Diferencia</h2>
+            
+            <div class="benefits">
+                <div class="benefit-card">
+                    <div class="benefit-icon">📊</div>
+                    <h3>Auditoria Completa</h3>
+                    <p>Analisamos sua conta Google Ads e identificamos desperdiços.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Estratégia Customizada</h3>
+                    <p>Palavras-chave certas, públicos corretos, lances otimizados.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">📈</div>
+                    <h3>Otimização Diária</h3>
+                    <p>Monitoramos, testamos, ajustamos. Sempre buscando melhores resultados.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3>ROI Comprovado</h3>
+                    <p>Você vê números: quanto custou cada lead, qual é o retorno real.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">📱</div>
+                    <h3>Landing Pages Otimizadas</h3>
+                    <p>Anúncios perfeitos levam a landing pages que convertem.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">📋</div>
+                    <h3>Relatórios Mensais</h3>
+                    <p>Transparência total. Você entende cada euro investido.</p>
+                </div>
+            </div>
+
+            <!-- ESTATÍSTICAS -->
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">3x</div>
+                    <div class="stat-label">ROI Médio</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50%</div>
+                    <div class="stat-label">Redução em CPA</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">+200%</div>
+                    <div class="stat-label">Aumento em Leads</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="problems">
+        <div class="container">
+            <h2>O Processo</h2>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                <div>
+                    <h3 style="color: var(--primary); margin-bottom: 15px;">📊 Semana 1-2: Auditoria</h3>
+                    <p>Analisamos sua conta. Identificamos problemas, oportunidades e estratégia.</p>
+                </div>
+
+                <div>
+                    <h3 style="color: var(--primary); margin-bottom: 15px;">🛠️ Semana 3: Setup</h3>
+                    <p>Implementamos melhorias. Novas palavras-chave, novos anúncios, novos públicos.</p>
+                </div>
+
+                <div>
+                    <h3 style="color: var(--primary); margin-bottom: 15px;">📈 Semana 4+: Otimização</h3>
+                    <p>Monitoramento diário, testes A/B, ajustes. Sempre melhorando resultados.</p>
+                </div>
+
+                <div>
+                    <h3 style="color: var(--primary); margin-bottom: 15px;">📋 Mensal: Relatório</h3>
+                    <p>Você recebe análise completa: ROI, CPA, conversões, próximos passos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>Nossos Pacotes</h2>
+            
+            <div class="pricing">
+                <div class="price-card">
+                    <h3>Startup</h3>
+                    <div class="price">€299/mês</div>
+                    <ul>
+                        <li>1 campanha Google Ads</li>
+                        <li>Até 10 keywords</li>
+                        <li>Otimização semanal</li>
+                        <li>Relatório mensal básico</li>
+                        <li>Suporte por email</li>
+                    </ul>
+                    <a href="#form" class="cta-button" style="display: block;">Solicitar Consulta</a>
+                </div>
+
+                <div class="price-card featured">
+                    <h3>Growth</h3>
+                    <div class="price">€599/mês</div>
+                    <ul>
+                        <li>2-3 campanhas</li>
+                        <li>Até 30 keywords</li>
+                        <li>Otimização diária</li>
+                        <li>A/B testing</li>
+                        <li>Relatório detalhado</li>
+                        <li>Suporte WhatsApp</li>
+                        <li>Landing page</li>
+                    </ul>
+                    <a href="#form" class="cta-button" style="display: block;">Solicitar Consulta</a>
+                </div>
+
+                <div class="price-card">
+                    <h3>Premium</h3>
+                    <div class="price">€999/mês</div>
+                    <ul>
+                        <li>Campanhas ilimitadas</li>
+                        <li>100+ keywords</li>
+                        <li>Otimização em tempo real</li>
+                        <li>Reuniões semanais</li>
+                        <li>Landing pages custom</li>
+                        <li>Análise de concorrentes</li>
+                        <li>Suporte prioritário</li>
+                    </ul>
+                    <a href="#form" class="cta-button" style="display: block;">Solicitar Consulta</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="form-section" id="form">
+        <div class="container">
+            <form onsubmit="trackFormSubmit(); submitForm(event);">
+                <h2>Solicitar Consulta Estratégica Grátis</h2>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Seu Nome *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Seu Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Telefone *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Empresa *</label>
+                        <input type="text" id="company" name="company" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="budget">Orçamento mensal atual em Google Ads *</label>
+                    <select id="budget" name="budget" required>
+                        <option value="">-- Selecione --</option>
+                        <option value="Sem ads">Ainda não uso Google Ads</option>
+                        <option value="€100-500">€100 - €500</option>
+                        <option value="€500-1000">€500 - €1.000</option>
+                        <option value="€1000-5000">€1.000 - €5.000</option>
+                        <option value="+€5000">+€5.000</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Qual é seu maior desafio com Google Ads?</label>
+                    <textarea id="message" name="message"></textarea>
+                </div>
+
+                <button type="submit" class="form-submit">Agendar Consulta Grátis (15 min)</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Website-Mark. Todos os direitos reservados.</p>
+            <p>Telefone: +351 XXX XXX XXX | Email: info@website-mark.pt</p>
+        </div>
+    </footer>
+
+    <script>
+        function trackFormSubmit() {
+            gtag('event', 'conversion', {
+                'send_to': 'AW-XXXXXXXXXX/XXXXXXXXXXXX'
+            });
+        }
+
+        function submitForm(event) {
+            event.preventDefault();
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                company: document.getElementById('company').value,
+                budget: document.getElementById('budget').value,
+                message: document.getElementById('message').value
+            };
+            console.log('Formulário enviado:', formData);
+            alert('Obrigado! Você receberá um contacto em breve!');
+            event.target.reset();
+        }
+    </script>
+    <!-- Premium Scripts -->
+    <script src="/js/scroll-animations.js"></script>
+    <script src="/js/back-to-top.js"></script>
+</body>
+</html>
+
+---
+
+<!-- 
+LANDING PAGE 3: MANUTENÇÃO DE WEBSITES
+Copiar este código e salvar como: landing-manutencao.html
+Mesma estrutura, adaptada para manutenção/hospedagem
+-->
+
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manutenção e Hospedagem de Websites | Website-Mark</title>
+    <meta name="description" content="Hospedagem + manutenção + segurança. Seu site sempre ativo e protegido.">
+    
+    <!-- Google Ads Tracking -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-XXXXXXXXXX');
+    </script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --primary: #1E3A8A; --secondary: #F97316; --text: #1F2937; --light: #6B7280; --bg: #F9FAFB; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: var(--text); background: white; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+        
+        header { background: white; padding: 20px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        header .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-weight: bold; font-size: 20px; color: var(--primary); }
+        .cta-header { background: var(--secondary); color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: 500; }
+        
+        .hero { background: linear-gradient(135deg, var(--primary) 0%, #1e40af 100%); color: white; padding: 60px 0; text-align: center; }
+        .hero h1 { font-size: 48px; margin-bottom: 20px; line-height: 1.2; }
+        .hero p { font-size: 20px; margin-bottom: 30px; opacity: 0.95; }
+        
+        .cta-button { display: inline-block; background: var(--secondary); color: white; padding: 15px 40px; border-radius: 5px; text-decoration: none; font-weight: 600; font-size: 18px; transition: background 0.3s; border: none; cursor: pointer; }
+        .cta-button:hover { background: #ea580c; }
+        
+        section { padding: 60px 0; }
+        section h2 { font-size: 36px; margin-bottom: 30px; color: var(--primary); }
+        
+        .benefits { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .benefit-card { background: var(--bg); padding: 30px; border-radius: 8px; text-align: center; }
+        .benefit-card h3 { color: var(--primary); margin-bottom: 15px; }
+        .benefit-icon { font-size: 40px; margin-bottom: 15px; }
+        
+        .pricing { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+        .price-card { background: var(--bg); padding: 30px; border-radius: 8px; text-align: center; border: 2px solid transparent; }
+        .price-card.featured { border-color: var(--secondary); background: white; box-shadow: 0 10px 30px rgba(249, 115, 22, 0.2); }
+        .price-card h3 { color: var(--primary); margin-bottom: 15px; }
+        .price { font-size: 32px; font-weight: bold; color: var(--secondary); margin-bottom: 20px; }
+        .price-card ul { list-style: none; text-align: left; margin-bottom: 25px; }
+        .price-card li { padding: 10px 0; border-bottom: 1px solid #e5e7eb; color: var(--light); }
+        .price-card li:before { content: "✓ "; color: var(--secondary); font-weight: bold; margin-right: 8px; }
+        
+        .form-section { background: var(--bg); padding: 60px 0; }
+        form { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        form h2 { text-align: center; margin-bottom: 30px; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-weight: 500; }
+        input, textarea, select { width: 100%; padding: 12px; border: 1px solid #d1d5db; border-radius: 5px; font-size: 16px; font-family: inherit; }
+        input:focus, textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1); }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .form-submit { background: var(--secondary); color: white; padding: 15px 40px; border: none; border-radius: 5px; font-weight: 600; font-size: 16px; cursor: pointer; width: 100%; }
+        
+        footer { background: var(--primary); color: white; padding: 30px 0; text-align: center; }
+        
+        .problems { background: var(--bg); }
+        .problem-item { background: white; padding: 20px; margin-bottom: 20px; border-left: 4px solid var(--secondary); border-radius: 5px; }
+        .problem-item h3 { color: var(--primary); margin-bottom: 10px; }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 32px; }
+            .benefits, .pricing, .form-row { grid-template-columns: 1fr; }
+            section { padding: 40px 0; }
+        }
+    </style>
+  <script src="/js/preloader.js"></script>
+  <link rel="stylesheet" href="/css/cosmic-backgrounds.css">
+  <link rel="stylesheet" href="/css/landing-common.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Website-Mark</div>
+            <a href="#form" class="cta-header">Conhecer Pacotes</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Seu Site Sempre Ativo e Seguro</h1>
+            <p>Hospedagem profissional + manutenção + segurança 24/7</p>
+            <a href="#form" class="cta-button">Ver Pacotes</a>
+        </div>
+    </section>
+
+    <section class="problems">
+        <div class="container">
+            <h2>Problemas Com Website</h2>
+            
+            <div class="problem-item">
+                <h3>❌ Site cai/fica lento</h3>
+                <p>Hospedagem ruim = visitantes saem. Google penaliza seu ranking.</p>
+            </div>
+
+            <div class="problem-item">
+                <h3>❌ Sem manutenção</h3>
+                <p>Plugins desatualizados, brechas de segurança, dados perdidos.</p>
+            </div>
+
+            <div class="problem-item">
+                <h3>❌ Site hackeado</h3>
+                <p>Sem backups, sem proteção = perder tudo ou pagar resgate.</p>
+            </div>
+
+            <div class="problem-item">
+                <h3>❌ Você não tem tempo</h3>
+                <p>Seu negócio precisa de atenção. Site é responsabilidade de quem?</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>O Que Você Ganha</h2>
+            
+            <div class="benefits">
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Hospedagem Rápida</h3>
+                    <p>Servidores otimizados. Seu site carrega em <1s. Google adora.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔒</div>
+                    <h3>100% Segurança</h3>
+                    <p>SSL certificado, firewall, proteção contra DDoS, scanning diário.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">💾</div>
+                    <h3>Backups Automáticos</h3>
+                    <p>Cópia de segurança diária. Recuperação em 5 minutos se algo der errado.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">📊</div>
+                    <h3>Atualizações</h3>
+                    <p>WordPress, plugins, temas sempre atualizados. Nenhuma vulnerabilidade.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">💬</div>
+                    <h3>Suporte 24/7</h3>
+                    <p>Seu site caiu? Nós arrumamos em 5 minutos. Sem esperar fila.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">📈</div>
+                    <h3>Otimização Contínua</h3>
+                    <p>Melhoramos performance, velocidade, SEO regularmente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>Nossos Pacotes de Manutenção</h2>
+            
+            <div class="pricing">
+                <div class="price-card">
+                    <h3>Básico</h3>
+                    <div class="price">€49/mês</div>
+                    <ul>
+                        <li>Hospedagem 20GB</li>
+                        <li>Backup automático semanal</li>
+                        <li>SSL certificado</li>
+                        <li>Email profissional</li>
+                        <li>Suporte por email</li>
+                        <li>Uptime 99.5%</li>
+                    </ul>
+                    <a href="#form" class="cta-button" style="display: block;">Contratar</a>
+                </div>
+
+                <div class="price-card featured">
+                    <h3>Profissional</h3>
+                    <div class="price">€99/mês</div>
+                    <ul>
+                        <li>Hospedagem 100GB</li>
+                        <li>Backup automático diário</li>
+                        <li>SSL + Firewall</li>
+                        <li>10 emails profissionais</li>
+                        <li>Atualizações WordPress</li>
+                        <li>Scanning de segurança</li>
+                        <li>Suporte WhatsApp</li>
+                        <li>Uptime 99.9%</li>
+                    </ul>
+                    <a href="#form" class="cta-button" style="display: block;">Contratar</a>
+                </div>
+
+                <div class="price-card">
+                    <h3>Premium</h3>
+                    <div class="price">€199/mês</div>
+                    <ul>
+                        <li>Hospedagem ilimitada</li>
+                        <li>Backup a cada 2 horas</li>
+                        <li>Segurança máxima</li>
+                        <li>Emails ilimitados</li>
+                        <li>Manutenção proativa</li>
+                        <li>Otimização performance</li>
+                        <li>SEO updates</li>
+                        <li>Suporte prioritário</li>
+                        <li>Uptime 100%</li>
+                    </ul>
+                    <a href="#form" class="cta-button" style="display: block;">Contratar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="form-section" id="form">
+        <div class="container">
+            <form onsubmit="trackFormSubmit(); submitForm(event);">
+                <h2>Conhecer Planos de Manutenção</h2>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Seu Nome *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Seu Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Telefone *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Empresa *</label>
+                        <input type="text" id="company" name="company" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="site">Seu site já existe? *</label>
+                    <select id="site" name="site" required>
+                        <option value="">-- Selecione --</option>
+                        <option value="Sim, WordPress">Sim, está em WordPress</option>
+                        <option value="Sim, outro CMS">Sim, outro CMS</option>
+                        <option value="Sim, HTML puro">Sim, código HTML puro</option>
+                        <option value="Não">Não, não tenho site</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Qual é seu maior desafio com manutenção?</label>
+                    <textarea id="message" name="message"></textarea>
+                </div>
+
+                <button type="submit" class="form-submit">Solicitar Informações</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Website-Mark. Todos os direitos reservados.</p>
+            <p>Telefone: +351 XXX XXX XXX | Email: info@website-mark.pt</p>
+        </div>
+    </footer>
+
+    <script>
+        function trackFormSubmit() {
+            gtag('event', 'conversion', {
+                'send_to': 'AW-XXXXXXXXXX/XXXXXXXXXXXX'
+            });
+        }
+
+        function submitForm(event) {
+            event.preventDefault();
+            alert('Obrigado! Entraremos em contacto em breve!');
+            event.target.reset();
+        }
+    </script>
+    <!-- Premium Scripts -->
+    <script src="/js/scroll-animations.js"></script>
+    <script src="/js/back-to-top.js"></script>
+</body>
+</html>

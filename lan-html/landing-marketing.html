@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="https://cmtecnologia.pt/lan-html/landing-marketing.html" />
+
+    <title>Triplicar Vendas em 90 Dias | C&M Tecnologia - Garantia ROI</title>
+
+    <meta name="description" content="Triplicar as suas vendas em 90 dias ou o o seu dinheiro de volta. 280% ROI comprovado. Consulta grátis.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Design System -->
+    <link rel="stylesheet" href="/css/design-system.css">
+    <link rel="stylesheet" href="/css/landing-pages.css">
+    <link rel="stylesheet" href="/css/effects.css">
+    <link rel="stylesheet" href="/css/mobile-fixes.css">
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6B46C1;
+            --primary-dark: #5a3ba0;
+            --primary-light: #8b5cf6;
+            --yellow: #F59E0B;
+            --green: #10B981;
+            --dark-bg: #0f172a;
+            --dark-card: #1e293b;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --light-bg: #f8fafc;
+            --white: #ffffff;
+            --text-white: #f1f5f9;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        body.dark-mode {
+            background: var(--dark-bg);
+            color: var(--text-white);
+        }
+
+        /* ========== HEADER ========== */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background-image: url("/img/fundomenu.jpeg");
+            backdrop-filter: blur(15px);
+            border-bottom: 2px solid rgba(107, 70, 193, 0.15);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        body.dark-mode header {
+            background: rgba(15, 23, 42, 0.96);
+            border-bottom: 2px solid rgba(107, 70, 193, 0.3);
+        }
+
+        header nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 900;
+            font-size: 1.3rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--green) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode .nav-links a {
+            color: var(--text-white);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .theme-toggle {
+            background: var(--light-bg);
+            border: none;
+            padding: 0.6rem 0.8rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode .theme-toggle {
+            background: var(--dark-card);
+        }
+
+        @media (max-width: 768px) {
+            header { padding: 0.75rem 1rem; }
+            .nav-links { gap: 1rem; font-size: 0.85rem; }
+        }
+
+
+
+
+
+        @media (max-width: 768px) {
+  .logo span,
+  .logo p,
+  .logo small {
+    display: none;
+  }
+}
+
+
+        
+        /* ========== HERO WITH PARALLAX - IMAGEM FIXA ========== */
+        .hero {
+            margin-top: 60px;
+            position: relative;
+            min-height: 750px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            overflow: hidden;
+        }
+
+        /* BACKGROUND FIXO - PARALLAX COM IMAGEM */
+        .hero::before {
+            content: '';
+            position: fixed;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            height: calc(100vh - 60px);
+            background: url('fundomarketing.jpeg') center/cover no-repeat fixed;
+            background-attachment: fixed;
+            background-size: cover;
+            z-index: -2;
+            filter: brightness(0.65) contrast(1.1);
+        }
+
+        /* OVERLAY GRADIENTE VIOLETA + AMARELO - PARA LEGIBILIDADE E IMPACTO */
+        .hero::after {
+            content: '';
+            position: fixed;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            height: calc(100vh - 60px);
+            background: linear-gradient(135deg, rgba(107, 70, 193, 0.82) 0%, rgba(245, 158, 11, 0.15) 100%);
+            z-index: -1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 750px;
+            padding: 3rem 2rem;
+            margin-left: 3%;
+            color: var(--white);
+        }
+
+        .badge-urgent {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--yellow) 0%, var(--green) 100%);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.5);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.8rem, 7vw, 4rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 6px 30px rgba(0, 0, 0, 0.5);
+            animation: slideIn 0.8s ease-out;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 .guarantee {
+            color: var(--yellow);
+            display: block;
+            font-size: 0.95em;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 0.3em 0.5em;
+            border-radius: 8px;
+            font-weight: 900;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.35rem;
+            color: rgba(255, 255, 255, 0.97);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+            text-shadow: 0 3px 15px rgba(0, 0, 0, 0.4);
+            font-weight: 500;
+            animation: slideIn 0.8s ease-out 0.15s both;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.2rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+            animation: slideIn 0.8s ease-out 0.3s both;
+        }
+
+        .btn {
+            padding: 1.1rem 2.5rem;
+            font-size: 1.05rem;
+            font-weight: 800;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-cta {
+            background: linear-gradient(135deg, var(--yellow) 0%, #ff6b35 100%);
+            color: var(--white);
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 50px rgba(245, 158, 11, 0.6);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--primary);
+            border: 3px solid var(--white);
+            font-weight: 900;
+            box-shadow: 0 12px 35px rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: var(--light-bg);
+            transform: translateY(-4px);
+            box-shadow: 0 18px 50px rgba(255, 255, 255, 0.5);
+        }
+
+        .hero-metrics {
+            display: flex;
+            gap: 3rem;
+            margin-top: 2.5rem;
+            animation: slideIn 0.8s ease-out 0.45s both;
+            flex-wrap: wrap;
+        }
+
+        .metric {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .metric-number {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--yellow);
+            text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+        }
+
+        .guarantee-badge {
+            position: absolute;
+            top: 50%;
+            right: 5%;
+            transform: translateY(-50%);
+            background: var(--white);
+            color: var(--primary);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            animation: slideIn 0.8s ease-out 0.6s both;
+            max-width: 200px;
+            border: 3px solid var(--yellow);
+        }
+
+        .guarantee-badge h3 {
+            font-size: 1rem;
+            font-weight: 900;
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--green);
+        }
+
+        .guarantee-badge p {
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            margin: 0;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 650px;
+                margin-top: 70px;
+            }
+            .hero-content {
+                text-align: center;
+                margin-left: 0;
+                padding: 2rem 1rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            .cta-buttons {
+                flex-direction: column;
+            }
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            .guarantee-badge {
+                position: static;
+                transform: none;
+                margin-top: 2rem;
+            }
+            .hero-metrics {
+                gap: 1.5rem;
+                justify-content: center;
+            }
+        }
+
+        /* ========== FEATURES SECTION ========== */
+        .features {
+            background: linear-gradient(135deg, var(--light-bg) 0%, #faf5ff 100%);
+            padding: 5rem 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        body.dark-mode .features {
+            background: linear-gradient(135deg, var(--dark-card) 0%, rgba(107, 70, 193, 0.1) 100%);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            color: var(--primary);
+            font-weight: 900;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.8rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 900;
+            color: var(--text-dark);
+            margin-bottom: 1.2rem;
+        }
+
+        body.dark-mode .section-title {
+            color: var(--text-white);
+        }
+
+        .section-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-light);
+            max-width: 650px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 2px solid rgba(107, 70, 193, 0.1);
+            transition: all 0.35s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        body.dark-mode .feature-card {
+            background: var(--dark-card);
+            border-color: rgba(107, 70, 193, 0.3);
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--primary), var(--green));
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform 0.35s ease;
+        }
+
+        .feature-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 15px 40px rgba(107, 70, 193, 0.15);
+            transform: translateY(-8px);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            font-weight: 900;
+            margin-bottom: 0.8rem;
+            color: var(--primary);
+        }
+
+        body.dark-mode .feature-card h3 {
+            color: var(--green);
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        body.dark-mode .feature-card p {
+            color: rgba(241, 245, 249, 0.8);
+        }
+
+        /* ========== SERVICES SECTION ========== */
+        .services {
+            padding: 5rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 2px solid rgba(107, 70, 193, 0.1);
+            transition: all 0.35s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        body.dark-mode .service-card {
+            background: var(--dark-card);
+            border-color: rgba(107, 70, 193, 0.3);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--green));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.35s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 20px 50px rgba(107, 70, 193, 0.15);
+            transform: translateY(-8px);
+        }
+
+        .service-icon {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.35rem;
+            color: var(--primary);
+            margin-bottom: 1.2rem;
+            font-weight: 900;
+        }
+
+        body.dark-mode .service-card h3 {
+            color: var(--green);
+        }
+
+        .service-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-list li {
+            padding: 0.6rem 0;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        body.dark-mode .service-list li {
+            color: rgba(241, 245, 249, 0.8);
+        }
+
+        .service-list li::before {
+            content: "✓";
+            color: var(--green);
+            font-weight: bold;
+            font-size: 1.3rem;
+            min-width: 20px;
+        }
+
+        .service-pricing {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            margin: 1.5rem 0;
+            padding: 1.5rem 0;
+            border-top: 1px solid rgba(107, 70, 193, 0.1);
+            border-bottom: 1px solid rgba(107, 70, 193, 0.1);
+        }
+
+        body.dark-mode .service-pricing {
+            border-color: rgba(107, 70, 193, 0.3);
+        }
+
+        .service-price {
+            font-size: 2.2rem;
+            color: var(--primary);
+            font-weight: 900;
+        }
+
+        .service-price-period {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .service-cta {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .service-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(107, 70, 193, 0.4);
+        }
+
+        /* ========== RESULTS SECTION ========== */
+        .results {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--green) 100%);
+            color: var(--white);
+            padding: 5rem 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .results-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .results-content h2 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            margin-bottom: 3rem;
+            font-weight: 900;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .result-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .result-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+            border-color: var(--yellow);
+        }
+
+        .result-number {
+            font-size: 3.2rem;
+            font-weight: 900;
+            color: var(--yellow);
+            margin-bottom: 0.8rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .result-label {
+            font-size: 1.1rem;
+            font-weight: 700;
+            line-height: 1.5;
+        }
+
+        /* ========== TESTIMONIALS SECTION ========== */
+        .testimonials {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, var(--light-bg) 0%, rgba(107, 70, 193, 0.05) 100%);
+            position: relative;
+            z-index: 10;
+        }
+
+        body.dark-mode .testimonials {
+            background: linear-gradient(135deg, var(--dark-card) 0%, rgba(107, 70, 193, 0.1) 100%);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            max-width: 1400px;
+            margin: 3rem auto 0;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border-left: 5px solid var(--primary);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode .testimonial-card {
+            background: var(--dark-card);
+            border-left-color: var(--green);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(107, 70, 193, 0.15);
+        }
+
+        .stars {
+            color: var(--yellow);
+            margin-bottom: 1.2rem;
+            font-size: 1.3rem;
+            letter-spacing: 3px;
+        }
+
+        .testimonial-text {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        body.dark-mode .testimonial-text {
+            color: rgba(241, 245, 249, 0.8);
+        }
+
+        .testimonial-author {
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+        }
+
+        body.dark-mode .testimonial-author {
+            color: var(--green);
+        }
+
+        .testimonial-role {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        /* ========== CTA FINAL SECTION ========== */
+        .cta-final {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--green) 100%);
+            color: var(--white);
+            padding: 5rem 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .cta-final h2 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            margin-bottom: 1.2rem;
+            font-weight: 900;
+        }
+
+        .cta-final p {
+            font-size: 1.15rem;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+            opacity: 0.95;
+            font-weight: 600;
+        }
+
+        .form-container {
+            max-width: 550px;
+            margin: 2rem auto;
+            background: rgba(255, 255, 255, 0.12);
+            padding: 3rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.6rem;
+            font-weight: 800;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.9rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(30, 41, 59, 0.5);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--white);
+            background: var(--white);
+            box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 110px;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 1.1rem;
+            background: linear-gradient(135deg, var(--yellow) 0%, #ff6b35 100%);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-weight: 900;
+            cursor: pointer;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(245, 158, 11, 0.4);
+        }
+
+        .whatsapp-cta {
+            margin-top: 2.5rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .whatsapp-cta a {
+            color: var(--yellow);
+            text-decoration: none;
+            font-weight: 900;
+            transition: color 0.3s ease;
+            display: inline-block;
+            margin-top: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .whatsapp-cta a:hover {
+            color: var(--white);
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: var(--text-dark);
+            color: var(--text-white);
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        body.dark-mode footer {
+            background: rgba(15, 23, 42, 0.9);
+        }
+
+        footer p {
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        footer a {
+            color: var(--green);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--yellow);
+        }
+
+        .footer-links {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            .results-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .form-container {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        /* ========== UTILITIES ========== */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        ::selection {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--light-bg);
+        }
+
+        body.dark-mode ::-webkit-scrollbar-track {
+            background: var(--dark-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 5px;
+        }
+    </style>
+  <script src="/js/preloader.js"></script>
+  <link rel="stylesheet" href="/css/cosmic-backgrounds.css">
+  <link rel="stylesheet" href="/css/landing-common.css">
+</head>
+<body>
+    
+    <!-- HEADER -->
+    <header>
+        <nav>
+            <a href="/" class="logo">CM Tecnologia</a>
+            <ul class="nav-links">
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#resultados">Resultados</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle">🌙</button>
+        </nav>
+    </header>
+
+    <!-- HERO - PARALLAX FIXO -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="badge-urgent">🔥 Garantia 100% - Triplicar ou Dinheiro de Volta</div>
+            
+            <h1>Triplicar Vendas em 90 Dias <span class="guarantee">ou Dinheiro de Volta 🔥</span></h1>
+            
+            <p class="hero-subtitle">Dashboard real-time. Primeira conversão garantida em 5-7 dias. 18 empresas PT já triplicaram vendas. Cancelar quando quiser com 7 dias de aviso.</p>
+            
+            <div class="cta-buttons">
+                <button class="btn btn-cta" onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">
+                    ⚡ Começar Agora
+                </button>
+                <a href="https://wa.me/351964977047?text=Quero%20triplicar%20minhas%20vendas%20com%20a%20CM%20Tecnologia" class="btn btn-secondary" target="_blank">
+                    💬 WhatsApp
+                </a>
+            </div>
+
+            <div class="hero-metrics">
+                <div class="metric">
+                    <div class="metric-number">280%</div>
+                    <div class="metric-label">ROI Médio</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-number">€450k</div>
+                    <div class="metric-label">Vendas 2024</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-number">5-7 dias</div>
+                    <div class="metric-label">1ª Conversão</div>
+                </div>
+            </div>
+        </div>            <div class="guarantee-badge">
+            <h3>✅ Garantia</h3>
+            <p>Triplicar Vendas em 90 Dias ou Dinheiro de Volta</p>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section class="features" id="features">            <div class="section-header">
+            <div class="section-label">Diferencial Comprovado</div>
+            <h2 class="section-title">Por Que Escolher a CM Tecnologia</h2>
+            <p class="section-subtitle">18 empresas PT já triplicaram vendas. Garantia 100%. Dashboard real-time. Sem contratos prisioneiros. Gestor dedicado. Resposta em 24h.</p>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Dashboard Real-Time 24/7</h3>
+                <p>Acompanha tudo ao vivo: cliques, conversões, custo por lead, ROI exato. Você sabe sempre quanto gasta e quanto ganha.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>1ª Conversão em 5-7 Dias</h3>
+                <p>Primeira venda garantida ou trabalhamos grátis até conseguir. Otimização contínua desde dia 1.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>280% ROI Médio Comprovado</h3>
+                <p>Cada € investido retorna €2.80 multiplicado. Focamos em resultados mensuráveis, não em vaidades de cliques.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔓</div>
+                <h3>Sem Contratos Prisioneiros</h3>
+                <p>Cancela com 7 dias de aviso, quando quiser. Confiamos tanto no nosso trabalho que você vai querer ficar.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <h3>Escalável de €0 a €100k+/mês</h3>
+                <p>Começamos pequeno com startups, escalamos com PMEs, dominamos e-commerce. Crescemos quando você cresce.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">👤</div>
+                <h3>Gestor Dedicado Só Seu</h3>
+                <p>Uma pessoa responsável por você. Reunião semanal. Resposta em 24h máximo. Você nunca fica em suporte genérico.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services" id="servicos">
+        <div class="section-header">
+            <div class="section-label">Serviços Premium</div>
+            <h2 class="section-title">6 Pacotes Comprovados</h2>
+            <p class="section-subtitle">Todos com análise estratégica grátis, relatório semanal, otimização contínua, gestor dedicado e garantia de resultado.</p>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🎯</div>
+                <h3>Google Ads Pro</h3>
+                <ul class="service-list">
+                    <li>Setup 3 campanhas</li>
+                    <li>Otimização diária</li>
+                    <li>150+ keywords</li>
+                    <li>A/B testing</li>
+                    <li>Relatório semanal</li>
+                    <li>Suporte 24/7</li>
+                </ul>
+                <div class="service-pricing">
+                    <span class="service-price">€299</span>
+                    <span class="service-price-period">/mês</span>
+                </div>
+                <button class="service-cta" onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">Contratar</button>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📱</div>
+                <h3>Social Media</h3>
+                <ul class="service-list">
+                    <li>Estratégia visual</li>
+                    <li>12 posts/mês</li>
+                    <li>Community management</li>
+                    <li>Análise concorrência</li>
+                    <li>Campanhas pagas</li>
+                    <li>Crescimento garantido</li>
+                </ul>
+                <div class="service-pricing">
+                    <span class="service-price">€249</span>
+                    <span class="service-price-period">/mês</span>
+                </div>
+                <button class="service-cta" onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">Contratar</button>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🔍</div>
+                <h3>SEO Premium</h3>
+                <ul class="service-list">
+                    <li>Auditoria completa</li>
+                    <li>Otimização on-page</li>
+                    <li>4 artigos/mês</li>
+                    <li>Link building</li>
+                    <li>Rankear em Google</li>
+                    <li>Tráfego organico</li>
+                </ul>
+                <div class="service-pricing">
+                    <span class="service-price">€279</span>
+                    <span class="service-price-period">/mês</span>
+                </div>
+                <button class="service-cta" onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">Contratar</button>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📧</div>
+                <h3>Email Marketing</h3>
+                <ul class="service-list">
+                    <li>Setup automações</li>
+                    <li>Segmentação</li>
+                    <li>Templates premium</li>
+                    <li>A/B testing</li>
+                    <li>+35% taxa abertura</li>
+                    <li>Conversão garantida</li>
+                </ul>
+                <div class="service-pricing">
+                    <span class="service-price">€149</span>
+                    <span class="service-price-period">/mês</span>
+                </div>
+                <button class="service-cta" onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">Contratar</button>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>Analytics</h3>
+                <ul class="service-list">
+                    <li>Dashboard custom</li>
+                    <li>Rastreamento 360°</li>
+                    <li>Insights acionáveis</li>
+                    <li>Relatórios semanais</li>
+                    <li>Otimização contínua</li>
+                    <li>Consultoria estratégica</li>
+                </ul>
+                <div class="service-pricing">
+                    <span class="service-price">€99</span>
+                    <span class="service-price-period">/mês</span>
+                </div>
+                <button class="service-cta" onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">Contratar</button>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">⭐</div>
+                <h3>Pack Completo</h3>
+                <ul class="service-list">
+                    <li>Todos os 5 serviços</li>
+                    <li>Prioridade máxima</li>
+                    <li>Reunião 2x/semana</li>
+                    <li>Ajustes ilimitados</li>
+                    <li>Consultoria contínua</li>
+                    <li>Desconto 35%</li>
+                </ul>
+                <div class="service-pricing">
+                    <span class="service-price">€749</span>
+                    <span class="service-price-period">/mês</span>
+                </div>
+                <button class="service-cta" onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">Contratar</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESULTS SECTION -->
+    <section class="results" id="resultados">
+        <div class="results-content">
+            <h2>Números Que Comprovam</h2>
+            
+            <div class="results-grid">
+                <div class="result-item">
+                    <div class="result-number">18</div>
+                    <div class="result-label">Clientes Ativos</div>
+                </div>
+
+                <div class="result-item">
+                    <div class="result-number">€450k</div>
+                    <div class="result-label">Vendas Geradas</div>
+                </div>
+
+                <div class="result-item">
+                    <div class="result-number">280%</div>
+                    <div class="result-label">ROI Comprovado</div>
+                </div>
+
+                <div class="result-item">
+                    <div class="result-number">87%</div>
+                    <div class="result-label">Taxa Retenção</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+        <h2 class="section-title">Clientes Reais, Resultados Reais</h2>
+        
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Contratei com €0 em vendas. 3 meses depois: 45 leads/mês qualificados. ROI de 3.8x. Mateus muda negócios."</p>
+                <p class="testimonial-author">João Fernandes</p>
+                <p class="testimonial-role">CEO StartupTech - Leiria</p>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Gastava €1200/mês sem retorno. Mateus reduziu para €450 e triplicou minhas conversões. Profissionalismo puro."</p>
+                <p class="testimonial-author">Maria Rodrigues</p>
+                <p class="testimonial-role">Diretora E-commerce - Porto</p>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Melhor investimento de 2024. Dashboard real-time, relatórios semanais, resultados garantidos. Recomendo demais!"</p>
+                <p class="testimonial-author">Pedro Silva</p>
+                <p class="testimonial-role">Founder Agência Digital - Setúbal</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="cta-final" id="contato">
+        <h2>Começar Sua Transformação Agora</h2>
+        <p>Consulta inicial 100% grátis. 30 minutos. Plano de ação customizado sem compromissos. Dashboard early access.</p>
+        
+        <div class="form-container">
+            <form onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label>Seu Nome *</label>
+                    <input type="text" placeholder="João Silva" required>
+                </div>
+                <div class="form-group">
+                    <label>Email *</label>
+                    <input type="email" placeholder="joao@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Telefone *</label>
+                    <input type="tel" placeholder="+351 919 000 000" required>
+                </div>
+                <div class="form-group">
+                    <label>Seu Negócio *</label>
+                    <textarea placeholder="Loja online de... Gasto €X em ads... Quero crescer..." required></textarea>
+                </div>
+                <button type="submit" class="form-submit">Agendar Consulta Grátis</button>
+            </form>
+
+            <div class="whatsapp-cta">
+                💬 Ou envie pelo WhatsApp: 
+                <a href="https://wa.me/351964977047?text=Quero%20triplicar%20minhas%20vendas" target="_blank">
+                    +351 919 000 000
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2025 CM Tecnologia. Transformamos Vendas em Resultados.</p>
+        <div class="footer-links">
+            <a href="#">Privacidade</a>
+            <a href="#">Termos</a>
+            <a href="#">Contato</a>
+        </div>
+    </footer>
+
+    <script>
+        // Dark Mode
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        
+        if (currentTheme === 'dark') {
+            body.classList.add('dark-mode');
+            themeToggle.textContent = '☀️';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            const theme = body.classList.contains('dark-mode') ? 'dark' : 'light';
+            localStorage.setItem('theme', theme);
+            themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+        });
+
+        // Form
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const nome = form.querySelector('input[type="text"]').value;
+            const email = form.querySelector('input[type="email"]').value;
+            const telefone = form.querySelector('input[type="tel"]').value;
+            const mensagem = form.querySelector('textarea').value;
+
+            const whatsappMessage = `Olá CM Tecnologia! Sou ${nome}. Email: ${email} | Tel: ${telefone} | Negócio: ${mensagem}`;
+            const whatsappURL = `https://wa.me/351964977047?text=${encodeURIComponent(whatsappMessage)}`;
+
+            alert('✅ Obrigado ' + nome + '!\n\nConfirmação enviada para ' + email + '\n\nClique em OK para enviar também no WhatsApp.');
+            window.open(whatsappURL, '_blank');
+            form.reset();
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+    <script src="/main.js"></script>
+    <!-- Premium Scripts -->
+    <script src="/js/scroll-animations.js"></script>
+    <script src="/js/back-to-top.js"></script>
+</body>
+
+</html>

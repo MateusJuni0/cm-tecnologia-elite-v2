@@ -1,8 +1,0 @@
-{
-  "name": "website-mark",
-  "version": "1.0.0",
-  "dependencies": {
-    "nodemailer": "^6.9.7",
-    "openai": "^6.17.0"
-  }
-}

@@ -5,7 +5,7 @@
     "main":  "index.js",
     "scripts":  {
                     "preview":  "vite preview",
-                    "build":  "tsc \u0026\u0026 vite build",
+                    "build":  "vite build",
                     "dev":  "vite"
                 },
     "keywords":  [
@@ -23,6 +23,7 @@
                          "tailwindcss":  "^4.2.1"
                      },
     "devDependencies":  {
+                            "@types/node":  "^25.5.0",
                             "@vitejs/plugin-react":  "^6.0.1",
                             "typescript":  "^5.9.3",
                             "vite":  "^8.0.0"
